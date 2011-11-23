@@ -1,0 +1,76 @@
+README
+
+
+1. AUTHORSHIP
+=============
+Author: Greg Elin
+Email: greg@fotonotes.net
+
+
+2. ABOUT THIS REPOSITORY
+========================
+
+This is the start of a collection of useful scripts for working with 
+Federal Communications Commission's (FCC) publicly downloadable files associated with
+Consolidated Database System (CDBS). CDBS contains the broadcast media related licenses
+and applications on file with the FCC. 
+
+This repository is maintained at: https://github.com/gregelin/FCC-CDBS
+
+
+3. ABOUT CDBS FROM FCC's CDBS README[1]
+=======================================
+
+CDBS is the Consolidated Database System for the FCC's Media Bureau.
+CDBS is a relational database; the field application_id is the primary key
+which associates data elements for many of the various tables.
+
+The public files under CDBS are available at:
+http://www.fcc.gov/mb/databases/cdbs/
+Normally, these files will be updated daily.
+
+A more descriptive listing of the data elements is in:
+ftp://ftp.fcc.gov/pub/Bureaus/MB/Databases/cdbs/_Engineering_Data_Description.pdf
+This PDF document describes the fields in each table in 
+alphabetical order, not the order as they appear in the data files.
+The fields in each file are pipe-delimited ("|").
+
+The files have been compressed on a Unix system with zip (-l option).
+They can be unzipped on a PC using PKUNZIP, WINZip, or similar utilities.
+
+The main table for FM engineering data is fm_eng_data. 
+The field eng_record_type can either be 'C' (current records) or
+'A' (archived or superceded records). There is a similar marker for AM
+data in table am_ant_sys. AM data are also located in am_eng_data. 
+
+Ownership information can be located through the party table. The app_party
+and fac_party tables hold the associated party_id key.
+
+Questions and corrections concerning the CDBS data should be directed to:
+
+AM & FM Radio
+Using CDBS data: Jorden Brinn, jorden.brinn@fcc.gov
+Other CDBS questions: James Bradshaw, james.bradshaw@fcc.gov
+
+TV
+All CDBS questions: Hossein Hashemzadeh, hossein.hashemzadeh@fcc.gov
+
+
+4. ACRONYMS
+===========
+
+FCC: Federal Communication Commission
+CDBS: Consolidated DataBase System
+
+
+5. SEE ALSO
+===========
+
+1. CDBS Documentation page: http://transition.fcc.gov/mb/databases/cdbs/
+2. FCC CDBS README: http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
+
+
+6. FOOTNOTES
+============
+[1] http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
+

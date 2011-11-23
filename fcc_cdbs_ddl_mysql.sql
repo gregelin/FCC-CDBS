@@ -1,8 +1,10 @@
 -- ===============================================================================
 --   FCC CDBS Database
+--   DESCRIPTION:       This is schema DDL script for the publicly released files under CDBS.
 --   URL:               http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
 --   DATA URL:          http://transition.fcc.gov/mb/databases/cdbs/
 --   DOCUMENTATION:     http://transition.fcc.gov/mb/databases/cdbs/
+--                      ftp://ftp.fcc.gov/pub/Bureaus/MB/Databases/cdbs/_Engineering_Data_Description.pdf
 --   
 -- ================================================================================
 
