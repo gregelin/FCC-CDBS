@@ -72,19 +72,11 @@ set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 
 -- amcmnts
--- amcmnts
-drop table if exists amcmnts;
-create table amcmnts (
-application_id    int,
-comment_type    char(5),
-comment    varchar(250)
-);
 -- load amcmnts
 LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/amcmnts.dat'
 INTO TABLE amcmnts
 FIELDS TERMINATED BY '|'
 (application_id, comment_type, comment);
-select * from amcmnts limit 10;
 
 -- ant_make
 -- load ant_make
@@ -374,12 +366,12 @@ last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 -- ERROR 2 (HY000): File '/codedata/FCC/data/public/cdbs/ownership_other_int_xml_data.dat' not found (Errcode: 2)
 -- ownership_other_int_xml_data
 -- load ownership_other_int_xml_data
-LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_other_int_xml_data.dat'
-INTO TABLE ownership_other_int_xml_data
-FIELDS TERMINATED BY '|'
-(application_id, file_id, order_number, assets_perc, comm_city, comm_state, entity_type, equity_perc, fac_callsign, facility_id, name, newspaper, positional_int_off, positional_int_dir, positional_int_par, positional_int_lim, positional_int_stk, positional_int_own, positional_int_ent, positional_int_oth, positional_int_other_info, votes_perc, @last_update_date)
-set
-last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+-- LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_other_int_xml_data.dat'
+-- INTO TABLE ownership_other_int_xml_data
+-- FIELDS TERMINATED BY '|'
+-- (application_id, file_id, order_number, assets_perc, comm_city, comm_state, entity_type, equity_perc, fac_callsign, facility_id, name, newspaper, positional_int_off, positional_int_dir, positional_int_par, positional_int_lim, positional_int_stk, positional_int_own, positional_int_ent, positional_int_oth, positional_int_other_info, votes_perc, @last_update_date)
+-- set
+-- last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 
 -- ownership_relationships
 -- load ownership_relationships
