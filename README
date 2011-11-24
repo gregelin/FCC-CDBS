@@ -55,22 +55,55 @@ Other CDBS questions: James Bradshaw, james.bradshaw@fcc.gov
 TV
 All CDBS questions: Hossein Hashemzadeh, hossein.hashemzadeh@fcc.gov
 
+4. MAPPING OF CUSTOM USER-DEFINED DATA TYPES
+============================================
 
-4. ACRONYMS
+The publish CDBS data types include 17 custom defined fields. 
+These custom defined data types have been converted to an appropriate field
+definition for each specific data type. For reference the mappings are:
+
+The publish CDBS field types include 17 custom defined fields. 
+
+	address to varchar(40)
+	arn to char(12)
+	callsign to char(12)
+	city to varchar(20)
+	country to char(2)
+	county to varchar(30)
+	email to varchar(60)
+	file_number to char(21)
+	file_prefix to char(10)
+	form_number to varchar(10)
+	ind to char(1)
+	name to varchar(60)
+	percentage to float(9,6)
+	phone to char(10)
+	state to char(2)
+	title to varchar(60)
+	url to varchar(255)
+
+
+5. CONVERTING TO MYSQL
+======================
+
+Floats have been defined as float(13,6) for most values and float(9,6) for percentage.
+
+
+6. ACRONYMS
 ===========
 
 FCC: Federal Communication Commission
 CDBS: Consolidated DataBase System
 
 
-5. SEE ALSO
+7. SEE ALSO
 ===========
 
 1. CDBS Documentation page: http://transition.fcc.gov/mb/databases/cdbs/
 2. FCC CDBS README: http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
 
 
-6. FOOTNOTES
+8. FOOTNOTES
 ============
 [1] http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
 

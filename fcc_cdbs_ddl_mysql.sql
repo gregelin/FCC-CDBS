@@ -23,9 +23,29 @@
 --   Notes:             Not tested yet
 -- 
 --   Mappings:          float() to float(13,6)
---                      ind to ???
+--                      varchar(40) to varchar(40)
+--                      char(12) to char(12)
+--                      char(12) to char(12)
+--                      varchar(20) to varchar(20)
+--                      char(2) to char(2)
+--                      varchar(30) to varchar(30)
+--                      varchar(60) to varchar(60)
+--                      varchar(21) to char(21)
+--                      varchar(10) to char(10)
+--                      varchar(10) to varchar(10)
+--                      char(1) to char(1)
+--                      varchar(60) to varchar(60)
+--                      float(9,6) to float(8)
+--                      char(10) to char(10)
+--                      char(2) to char(2)
+--                      varchar(60) to varchar(60)
+--                      varchar(255) to varchar(255)
 --
 -- ================================================================================
+
+-- ================================================================================
+-- 
+--   User-defined data types and mappings
 
 -- SQL schema drop statements
 -- --------------------------------------------------------------------
@@ -75,7 +95,6 @@ drop table if exists  positional_int;
 drop table if exists  supp_facility;
 drop table if exists  tv_app_indicators;
 drop table if exists  tv_eng_data;
-drop table if exists  user_type;
 
 
 -- SQL create table statements
@@ -104,7 +123,7 @@ lon_dir    char(1),
 lon_min    int,
 lon_sec    float(13,6),
 q_factor    float(13,6),
-q_factor_custom_ind    ind,
+q_factor_custom_ind    char(1),
 power    float(13,6),
 rms_augmented    float(13,6),
 rms_standard    float(13,6),
@@ -136,12 +155,12 @@ last_update_date    datetime
 
 -- am_eng_data
 create table am_eng_data (
-ant_monitor    name,
+ant_monitor    varchar(60),
 application_id    int NOT NULL,
 broadcast_schedule    char(1),
 encl_fence_dist    float(13,6),
 facility_id    int NOT NULL,
-sampl_sys_ind    ind,
+sampl_sys_ind    char(1),
 station_class    char(1),
 time_zone    char(1),
 region_2_class    char(1),
@@ -175,9 +194,9 @@ topload_d    float(13,6),
 tower_num    tinyint NOT NULL,
 tower_pl_codes    varchar(40),
 tower_ref_switch    char(1),
-asrn_na_ind    ind,
+asrn_na_ind    char(1),
 topload_apparent_hgt    float(13,6),
-faa_notified_ind    ind,
+faa_notified_ind    char(1),
 tower_type    char(1),
 last_update_date    datetime
 );
@@ -213,12 +232,12 @@ create table app_party (
 application_id    int NOT NULL,
 party_id    int NOT NULL,
 party_type    char(5) NOT NULL,
-cert_title    title,
+cert_title    varchar(60),
 cert_date    datetime,
 other_fcc_id    int,
-party_notify_ind    ind,
+party_notify_ind    char(1),
 party_relationship    varchar(255),
-sig_present_ind    ind,
+sig_present_ind    char(1),
 sig_name    varchar(60),
 last_change_date    datetime
 );
@@ -240,16 +259,16 @@ last_change_date    datetime
 
 -- application
 create table application (
-app_arn    arn,
+app_arn    char(12),
 app_service    char(2) NOT NULL,
 application_id    int NOT NULL,
 facility_id    int NOT NULL,
-file_prefix    file_prefix,
-comm_city    city,
-comm_state    state,
+file_prefix    varchar(10),
+comm_city    varchar(20),
+comm_state    char(2),
 fac_frequency    float(13,6),
 station_channel    int,
-fac_callsign    callsign,
+fac_callsign    char(12),
 general_app_service    varchar(2),
 app_type    varchar(4),
 paper_filed_ind    char(1),
@@ -270,7 +289,7 @@ last_change_date    datetime
 -- call_sign_history
 create table call_sign_history (
 begin_date    datetime,
-callsign    callsign,
+callsign    char(12),
 callsign_hist_id    int,
 callsign_seq_id    tinyint NOT NULL,
 facility_id    int NOT NULL,
@@ -280,7 +299,7 @@ record_change_date    datetime
 -- dtv_agreement_group
 create table dtv_agreement_group (
 application_id    int NOT NULL,
-fac_callsign    callsign,
+fac_callsign    char(12),
 facility_id    int,
 order_num    int,
 dtv_agreement_group_id    int NOT NULL,
@@ -290,8 +309,8 @@ last_change_date    datetime
 
 -- dtv_allotment
 create table dtv_allotment (
-state    state NOT NULL,
-city    city NOT NULL,
+state    char(2) NOT NULL,
+city    varchar(20) NOT NULL,
 analog_channel    int,
 digital_channel    int NOT NULL,
 erp    float(13,6),
@@ -340,9 +359,9 @@ last_change_date    datetime
 create table dtv_transition (
 dtv_cur_channel    int,
 application_id    int NOT NULL,
-dtv_cur_na    ind,
+dtv_cur_na    char(1),
 ntsc_cur_channel    int,
-ntsc_cur_na    ind,
+ntsc_cur_na    char(1),
 rep_max_cert    char(1),
 file_prefix_cer_a    char(10),
 app_arn_cer_a    char(12),
@@ -353,18 +372,18 @@ app_arn_cer_d    char(12),
 rep_max_cer_type    char(3),
 file_prefix_cer_e    char(10),
 app_arn_cer_e    char(12),
-data_cert_ind    ind,
+data_cert_ind    char(1),
 election    char(1),
 elected_channel_a    int,
 elected_channel_b    int,
 alt_elected_channel    int,
-intl_coord_ind    ind,
+intl_coord_ind    char(1),
 cont_election    char(1),
 cont_elected_channel    int,
 conflict_decision    char(1),
 reference_no    int,
-negot_agreemt_ind    ind,
-tech_eng_ind    ind,
+negot_agreemt_ind    char(1),
+tech_eng_ind    char(1),
 tent_chan_status    char(1),
 tentative_channel    int,
 post_tran_dtv_channel    int,
@@ -515,18 +534,18 @@ last_change_date    datetime
 
 -- facility
 create table facility (
-comm_city    city,
-comm_state    state,
-eeo_rpt_ind    ind,
-fac_address1    address,
-fac_address2    address,
-fac_callsign    callsign,
+comm_city    varchar(20),
+comm_state    char(2),
+eeo_rpt_ind    char(1),
+fac_address1    varchar(40),
+fac_address2    varchar(40),
+fac_callsign    char(12),
 fac_channel    int,
-fac_city    city,
-fac_country    country,
+fac_city    varchar(20),
+fac_country    char(2),
 fac_frequency    float(13,6),
 fac_service    char(2),
-fac_state    state,
+fac_state    char(2),
 fac_status_date    datetime,
 fac_type    varchar(3),
 facility_id    int NOT NULL,
@@ -549,10 +568,10 @@ last_change_date    datetime
 -- fm_app_indicators
 create table fm_app_indicators (
 application_id    int NOT NULL,
-bt_ind    ind,
-da_ind    ind,
+bt_ind    char(1),
+da_ind    char(1),
 no_rotation_ind    varchar(1),
-rule_73_215_req_ind    ind,
+rule_73_215_req_ind    char(1),
 last_change_date    datetime
 );
 
@@ -566,7 +585,7 @@ antenna_id    int,
 antenna_type    char(1),
 application_id    int NOT NULL,
 asd_service    char(2),
-asrn_na_ind    ind,
+asrn_na_ind    char(1),
 asrn    int,
 avg_horiz_pwr_gain    float(13,6),
 biased_lat    float(13,6),
@@ -682,15 +701,15 @@ last_change_date    datetime
 create table int_translator (
 application_id    int NOT NULL,
 delivery_method    char(1),
-prim_callsign    callsign,
-prim_comm_city    city,
-prim_comm_state    state,
+prim_callsign    char(12),
+prim_comm_city    varchar(20),
+prim_comm_state    char(2),
 prim_sta_out_channel    int,
 primary_via    varchar(13),
-scnd_comm_city    city,
-scnd_comm_state    state,
-third_comm_city    city,
-third_comm_state    state,
+scnd_comm_city    varchar(20),
+scnd_comm_state    char(2),
+third_comm_city    varchar(20),
+third_comm_state    char(2),
 trans_input_channel    int,
 prim_facility_id    int,
 last_change_date    datetime
@@ -725,54 +744,54 @@ last_change_date    datetime
 -- lic_app_indicators
 create table lic_app_indicators (
 application_id    int NOT NULL,
-auth_retrans_ind    ind,
-chng_transm_pwr_ind    ind,
-cp_stmt_incorrect_ind    ind,
-cp_terms_met_ind    ind,
-da_inst_compl_ind    ind,
-da_inst_correct_ind    ind,
-decr_c_erp_ind    ind,
-decr_nc_erp_ind    ind,
-del_cntr_prot_ind    ind,
-incr_erp_221_ind    ind,
-incr_erp_dckt_ind    ind,
-incr_erp_ind    ind,
-incr_erp_ownr_ind    ind,
+auth_retrans_ind    char(1),
+chng_transm_pwr_ind    char(1),
+cp_stmt_incorrect_ind    char(1),
+cp_terms_met_ind    char(1),
+da_inst_compl_ind    char(1),
+da_inst_correct_ind    char(1),
+decr_c_erp_ind    char(1),
+decr_nc_erp_ind    char(1),
+del_cntr_prot_ind    char(1),
+incr_erp_221_ind    char(1),
+incr_erp_dckt_ind    char(1),
+incr_erp_ind    char(1),
+incr_erp_ownr_ind    char(1),
 lic_app_service    char(2),
-lic_pta_ind    ind,
-nce_to_comm_ind    ind,
-no_intl_coord_ind    ind,
-orig_cp_file_prefix    file_prefix,
-orig_cp_app_arn    arn,
-lic_file_prefix    file_prefix,
-lic_app_arn    arn,
-rad_astr_not_ind    ind,
-repl_da_compl_ind    ind,
-repl_da_ind    ind,
-rule_73_1620a1_ind    ind,
-rule_73_1675a3_ind    ind,
-rule_73_1675a_ind    ind,
-rule_73_1690c8i_ind    ind,
-rule_73_1690c_ind    ind,
-rule_73_1692_ind    ind,
-rule_73_207_ind    ind,
-rule_73_315ab_ind    ind,
-rule_73_525a1_ind    ind,
-rule_73_68_ind    ind,
-spec_op_conds_ind    ind,
-sta_id_rules_ind    ind,
-stat_ready_ind    ind,
-trans_auth_erp_ind    ind,
-type_appr_stereo_ind    ind,
-inst_ht_dif_ok_ind    ind,
-rule_73_1590    ind,
-rule_73_1660_ind    ind,
-rule_73_1675c_1_ind    ind,
-rule_73_1675c_ind    ind,
-rule_73_1690c9_ind    ind,
-rule_73_3555_ind    ind,
-rule_73_685f_ind    ind,
-rule_73_68d3_ind    ind,
+lic_pta_ind    char(1),
+nce_to_comm_ind    char(1),
+no_intl_coord_ind    char(1),
+orig_cp_file_prefix    varchar(10),
+orig_cp_app_arn    char(12),
+lic_file_prefix    varchar(10),
+lic_app_arn    char(12),
+rad_astr_not_ind    char(1),
+repl_da_compl_ind    char(1),
+repl_da_ind    char(1),
+rule_73_1620a1_ind    char(1),
+rule_73_1675a3_ind    char(1),
+rule_73_1675a_ind    char(1),
+rule_73_1690c8i_ind    char(1),
+rule_73_1690c_ind    char(1),
+rule_73_1692_ind    char(1),
+rule_73_207_ind    char(1),
+rule_73_315ab_ind    char(1),
+rule_73_525a1_ind    char(1),
+rule_73_68_ind    char(1),
+spec_op_conds_ind    char(1),
+sta_id_rules_ind    char(1),
+stat_ready_ind    char(1),
+trans_auth_erp_ind    char(1),
+type_appr_stereo_ind    char(1),
+inst_ht_dif_ok_ind    char(1),
+rule_73_1590    char(1),
+rule_73_1660_ind    char(1),
+rule_73_1675c_1_ind    char(1),
+rule_73_1675c_ind    char(1),
+rule_73_1690c9_ind    char(1),
+rule_73_3555_ind    char(1),
+rule_73_685f_ind    char(1),
+rule_73_68d3_ind    char(1),
 sales_type_flg    char(1),
 conv_lptv_cp_arn    varchar(12),
 conv_lptv_cp_prefix    varchar(10),
@@ -1030,18 +1049,18 @@ last_update_date    datetime
 -- party
 create table party (
 party_id    int NOT NULL,
-party_address1    address,
-party_address2    address,
-party_citizenship    country,
-party_city    city,
-party_company    name,
-party_country    country,
-party_email    email,
-party_fax    phone,
+party_address1    varchar(40),
+party_address2    varchar(40),
+party_citizenship    char(2),
+party_city    varchar(20),
+party_company    varchar(60),
+party_country    char(2),
+party_email    varchar(60),
+party_fax    char(10),
 party_legal_name    varchar(255),
-party_name    name,
-party_phone    phone,
-party_state    state,
+party_name    varchar(60),
+party_phone    char(10),
+party_state    char(2),
 party_zip1    char(5),
 party_zip2    char(4),
 last_change_date    datetime
@@ -1050,12 +1069,12 @@ last_change_date    datetime
 -- positional_int
 create table positional_int (
 application_id    int NOT NULL,
-citizenship    country,
+citizenship    char(2),
 name_address    varchar(250) NOT NULL,
-equity_perc    percentage,
-votes_perc    percentage,
-title    name,
-boardmember_ind    ind,
+equity_perc    float(9,6),
+votes_perc    float(9,6),
+title    varchar(60),
+boardmember_ind    char(1),
 membership_perc    float(13,6),
 owner_perc    float(13,6),
 assets_perc    float(13,6),
@@ -1079,33 +1098,33 @@ last_update_date    datetime
 
 -- tv_app_indicators
 create table tv_app_indicators (
-ant_struc_reqs_ind    ind,
+ant_struc_reqs_ind    char(1),
 application_id    int NOT NULL,
-bt_used_ind    ind,
-da_ind    ind,
-elec_bt_prop_ind    ind,
-int_compl_ind    ind,
-mech_bt_prop_ind    ind,
-rule_73_1660_ind    ind,
-rule_73_607_ind    ind,
-rule_73_610_ind    ind,
-rule_73_614_ind    ind,
-rule_73_685ab_ind    ind,
-coverage_exhibit_ind    ind,
-rule_73_685dg_ind    ind,
+bt_used_ind    char(1),
+da_ind    char(1),
+elec_bt_prop_ind    char(1),
+int_compl_ind    char(1),
+mech_bt_prop_ind    char(1),
+rule_73_1660_ind    char(1),
+rule_73_607_ind    char(1),
+rule_73_610_ind    char(1),
+rule_73_614_ind    char(1),
+rule_73_685ab_ind    char(1),
+coverage_exhibit_ind    char(1),
+rule_73_685dg_ind    char(1),
 dummy_tx_flag    char(1),
-da_exhibit_ind    ind,
-rule_74_705_ind    ind,
-rule_74_706_ind    ind,
-rule_74_707_ind    ind,
-rule_73_622_ind    ind,
-ant_5km_ind    ind,
-rule_73_62_ind    ind,
-rule_1_1307_ind    ind,
-rule_73_625_ind    ind,
-rad_astr_ind    ind,
-faa_notified_ind    ind,
-rule_73_623a_ind    ind,
+da_exhibit_ind    char(1),
+rule_74_705_ind    char(1),
+rule_74_706_ind    char(1),
+rule_74_707_ind    char(1),
+rule_73_622_ind    char(1),
+ant_5km_ind    char(1),
+rule_73_62_ind    char(1),
+rule_1_1307_ind    char(1),
+rule_73_625_ind    char(1),
+rad_astr_ind    char(1),
+faa_notified_ind    char(1),
+rule_73_623a_ind    char(1),
 no_rotation_ind    varchar(1),
 rel_field_values_na    char(1),
 studio_in_comm_ind    char(1),
@@ -1207,23 +1226,4 @@ elevation_antenna_id    int,
 last_change_date    datetime
 );
 
--- user_type
-create table user_type (
-address    varchar(40),
-arn    char(12),
-callsign    char(12),
-city    varchar(20),
-country    char(2),
-county    varchar(30),
-email    varchar(60),
-file_number    char(21),
-file_prefix    char(10),
-form_number    varchar(10),
-ind    char(1),
-name    varchar(60),
-percentage    float(8),
-phone    char(10),
-state    char(2),
-title    varchar(60),
-url    varchar(255)
-);
+-- End SQL
