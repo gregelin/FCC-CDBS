@@ -17,8 +17,18 @@ and applications on file with the FCC.
 
 This repository is maintained at: https://github.com/gregelin/FCC-CDBS
 
+3. WHO SHOULD USE THIS
+======================
 
-3. ABOUT CDBS FROM FCC's CDBS README[1]
+These scripts are intended for those experienced with relational databases.
+The goal is to make it very easy for individuals with database knowledge to
+create their own copy of the CDBS. 
+
+If you are not familiar with SQL to create database tables and load data
+you will likely find this repository confusing.
+
+
+4. ABOUT CDBS FROM FCC's CDBS README[1]
 =======================================
 
 CDBS is the Consolidated Database System for the FCC's Media Bureau.
@@ -55,7 +65,7 @@ Other CDBS questions: James Bradshaw, james.bradshaw@fcc.gov
 TV
 All CDBS questions: Hossein Hashemzadeh, hossein.hashemzadeh@fcc.gov
 
-4. MAPPING OF CUSTOM USER-DEFINED DATA TYPES
+5. MAPPING OF CUSTOM USER-DEFINED DATA TYPES
 ============================================
 
 The publish CDBS data types include 17 custom defined fields. 
@@ -83,27 +93,27 @@ The publish CDBS field types include 17 custom defined fields.
 	url to varchar(255)
 
 
-5. CONVERTING TO MYSQL
+6. CONVERTING TO MYSQL
 ======================
 
 Floats have been defined as float(13,6) for most values and float(9,6) for percentage.
 
 
-6. ACRONYMS
+7. ACRONYMS
 ===========
 
 FCC: Federal Communication Commission
 CDBS: Consolidated DataBase System
 
 
-7. SEE ALSO
+8. SEE ALSO
 ===========
 
 1. CDBS Documentation page: http://transition.fcc.gov/mb/databases/cdbs/
 2. FCC CDBS README: http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
 
 
-8. FOOTNOTES
+9. FOOTNOTES
 ============
 [1] http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_readme.html
 
