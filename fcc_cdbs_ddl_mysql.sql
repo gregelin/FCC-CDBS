@@ -140,7 +140,7 @@ ant_dir_ind    char(1),
 grandfathered_ind    char(1),
 specified_hrs_range    varchar(25),
 augmented_ind    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- am_augs
@@ -150,7 +150,7 @@ aug_id    tinyint NOT NULL,
 azimuth_deg    float(13,6),
 radiation_aug    float(13,6),
 span_deg    float(13,6),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- am_eng_data
@@ -169,7 +169,7 @@ old_station_class    char(2),
 specified_hours    varchar(255),
 feed_circ_other    varchar(255),
 feed_circ_type    varchar(2),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- am_towers
@@ -198,7 +198,7 @@ asrn_na_ind    char(1),
 topload_apparent_hgt    float(13,6),
 faa_notified_ind    char(1),
 tower_type    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- amcmnts
@@ -215,7 +215,7 @@ ant_make    char(3) NOT NULL,
 ant_model_num    char(60) NOT NULL,
 app_service    char(2) NOT NULL,
 standard_ind    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- ant_pattern
@@ -224,7 +224,7 @@ antenna_id    int NOT NULL,
 azimuth    float(13,6) NOT NULL,
 field_value    float(13,6) NOT NULL,
 additional_az_num    smallint,
-last_change_date    datetime
+last_change_date    date
 );
 
 -- app_party
@@ -233,28 +233,28 @@ application_id    int NOT NULL,
 party_id    int NOT NULL,
 party_type    char(5) NOT NULL,
 cert_title    varchar(60),
-cert_date    datetime,
+cert_date    date,
 other_fcc_id    int,
 party_notify_ind    char(1),
 party_relationship    varchar(255),
 sig_present_ind    char(1),
 sig_name    varchar(60),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- app_tracking
 create table app_tracking (
 application_id    int NOT NULL,
-app_status_date    datetime,
-cutoff_date    datetime,
+app_status_date    date,
+cutoff_date    date,
 cutoff_type    char(1),
-cp_exp_date    datetime,
+cp_exp_date    date,
 app_status    varchar(5),
 dtv_checklist    varchar(1),
-amendment_stamped_date    datetime,
-accepted_date    datetime,
+amendment_stamped_date    date,
+accepted_date    date,
 tolling_code    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- application
@@ -283,17 +283,17 @@ sat_tv_ind    char(1),
 comm_county    char(20),
 comm_zip1    char(5),
 comm_zip2    char(4),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- call_sign_history
 create table call_sign_history (
-begin_date    datetime,
+begin_date    date,
 callsign    char(12),
 callsign_hist_id    int,
 callsign_seq_id    tinyint NOT NULL,
 facility_id    int NOT NULL,
-record_change_date    datetime
+record_change_date    date
 );
 
 -- dtv_agreement_group
@@ -304,7 +304,7 @@ facility_id    int,
 order_num    int,
 dtv_agreement_group_id    int NOT NULL,
 name    varchar(60),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- dtv_allotment
@@ -325,7 +325,7 @@ lon_min    int,
 lon_sec    int,
 biased_lat    float(13,6),
 biased_long    float(13,6),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- dtv_channel_assignments
@@ -352,7 +352,7 @@ create table dtv_facility (
 facility_id    int NOT NULL,
 dtv_fac_status    char(5),
 dtv_channel    int,
-last_change_date    datetime
+last_change_date    date
 );
 
 -- dtv_transition
@@ -391,14 +391,14 @@ pre_tran_dtv_channel    int,
 post_tran_auth_file_prefix char(10),
 post_tran_auth_app_arn    char(12),
 post_tran_auth_not_yet_ind char(1),
-construction_deadline_dat datetime,
+construction_deadline_dat    date,
 post_tran_operating_ind    char(1),
 op_status    char(3),
-op_expected_date    datetime,
+op_expected_date    date,
 op_power_level    float(13,6),
 op_population_perc    float(13,6),
 construction_complete_ind char(1),
-expect_cons_complete_date datetime,
+expect_cons_complete_date    date,
 const_not_begun    char(1),
 const_underway    char(1),
 const_addl_needed    char(1),
@@ -407,12 +407,12 @@ cp_mod_needed_ind    char(1),
 cp_mod_filed_ind    char(1),
 cp_mod_file_prefix    char(10),
 cp_mod_app_arn    char(12),
-cp_mod_filed_date    datetime,
-cp_mod_expected_date    datetime,
+cp_mod_filed_date    date,
+cp_mod_expected_date    date,
 addl_fcc_action_ind    char(1),
 addl_fcc_action_app_arn    char(12),
 addl_fcc_action_file_pref char(10),
-addl_fcc_action_date    datetime,
+addl_fcc_action_date    date,
 addl_intl_ind    char(1),
 addl_faa_approval_ind    char(1),
 addl_local_approval_ind    char(1),
@@ -434,19 +434,19 @@ addl_steps_ind    char(1),
 analog_nightlight_ind    char(1),
 analog_turnoff_pn_compl_flg char(1),
 binding_termination_flg    varchar(5),
-termination_date_not_aff    datetime,
-termination_date_aff    datetime,
+termination_date_not_aff    date,
+termination_date_aff    date,
 aff_term_cert_flg    varchar(5),
 cont_analog_flg    varchar(5),
 phone_help_ctr_flg    varchar(5),
 walkin_help_ctr_flg    varchar(5),
 st_analog_nightlight_ind    char(1),
-st_analog_nightlight_end_ datetime,
+st_analog_nightlight_end_    date,
 inf_analog_nightlight_ind char(1),
-inf_analog_nightlight_end datetime,
+inf_analog_nightlight_end    date,
 early_term_withdraw_ind    char(1),
 termination_time_0612_flg varchar(5),
-termination_date_nce    datetime,
+termination_date_nce    date,
 termination_time_nce_flg    varchar(5),
 termination_time_notaff_flg varchar(5),
 termination_time_aff_flg    varchar(5),
@@ -458,7 +458,7 @@ an_eligibility_showing_ind char(1),
 an_objection_to_elig_showg_ind char(1),
 an_objection_callsign    char(12),
 an_revocation_ind    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- elevation_ant_make
@@ -510,7 +510,7 @@ field_value330    float(13,6),
 field_value340    float(13,6),
 field_value350    float(13,6),
 elevation_antenna_id    int NOT NULL,
-last_update_date    datetime
+last_update_date    date
 );
 
 -- elevation_pattern_addl
@@ -521,7 +521,7 @@ azimuth    float(13,6) NOT NULL,
 field_value    float(13,6) NOT NULL,
 additional_az_num    smallint,
 elevation_antenna_id    int,
-last_update_date    datetime
+last_update_date    date
 );
 
 -- fac_party
@@ -529,7 +529,7 @@ create table fac_party (
 facility_id    int NOT NULL,
 party_id    int NOT NULL,
 party_type    char(5) NOT NULL,
-last_change_date    datetime
+last_change_date    date
 );
 
 -- facility
@@ -546,23 +546,23 @@ fac_country    char(2),
 fac_frequency    float(13,6),
 fac_service    char(2),
 fac_state    char(2),
-fac_status_date    datetime,
+fac_status_date    date,
 fac_type    varchar(3),
 facility_id    int NOT NULL,
-lic_expiration_date    datetime,
+lic_expiration_date    date,
 fac_status    varchar(5),
 fac_zip1    char(5),
 fac_zip2    char(4),
 station_type    char(1),
 assoc_facility_id    int,
-callsign_eff_date    datetime,
+callsign_eff_date    date,
 tsid_ntsc    int,
 tsid_dtv    int,
 digital_status    char(1),
 sat_tv    char(1),
 network_affil    varchar(100),
 nielsen_dma    varchar(60),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- fm_app_indicators
@@ -572,7 +572,7 @@ bt_ind    char(1),
 da_ind    char(1),
 no_rotation_ind    varchar(1),
 rule_73_215_req_ind    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- fm_eng_data
@@ -647,7 +647,7 @@ haat_horiz_calc_ind    char(1),
 erp_w    int,
 trans_power_output_w    int,
 market_group_num    varchar(7),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- frn_history
@@ -656,7 +656,7 @@ frn_history_id    int NOT NULL,
 facility_id    int NOT NULL,
 frn    varchar(10) NOT NULL,
 application_id    int,
-date_inserted    datetime,
+date_inserted    date,
 valid_ind    char(1)
 );
 
@@ -671,13 +671,13 @@ comment    varchar(250)
 create table gen_app_indicators (
 application_id    int NOT NULL,
 edu_comm_flg    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- if_notification
 create table if_notification (
 application_id    int NOT NULL,
-broadcast_date    datetime,
+broadcast_date    date,
 ibiquity_cert    char(1),
 tech_name    varchar(60),
 tech_phone    varchar(20),
@@ -690,11 +690,11 @@ digital_power_reduced    float(13,6),
 digital_power_reduced_na    char(1),
 ref_file_prefix    char(10),
 ref_app_arn    char(12),
-test_date    datetime,
-resolved_date    datetime,
+test_date    date,
+resolved_date    date,
 analog_erp    float(13,6),
 digital_erp    float(13,6),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- int_translator
@@ -712,18 +712,18 @@ third_comm_city    varchar(20),
 third_comm_state    char(2),
 trans_input_channel    int,
 prim_facility_id    int,
-last_change_date    datetime
+last_change_date    date
 );
 
 -- intl_tracking
 create table intl_tracking (
-accepted_date    datetime,
+accepted_date    date,
 application_id    int NOT NULL,
 can_coord_status    char(1),
-change_list_date    datetime,
+change_list_date    date,
 change_list_num    varchar(5),
 hours_operation    char(1),
-ifrb_date    datetime,
+ifrb_date    date,
 ifrb_list_flg    char(1),
 ifrb_serial_num    char(9),
 intl_class    varchar(2),
@@ -732,13 +732,13 @@ mex_coord_status    char(1),
 neg_allot_ind    varchar(4),
 notified_pattern    char(1),
 notified_status    char(1),
-proposed_date    datetime,
-referred_date    datetime,
+proposed_date    date,
+referred_date    date,
 region_2_status    char(1),
 updating_agency    varchar(4),
-notified_date    datetime,
+notified_date    date,
 intl_status    char(6),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- lic_app_indicators
@@ -797,7 +797,7 @@ conv_lptv_cp_arn    varchar(12),
 conv_lptv_cp_prefix    varchar(10),
 conv_lptv_lic_arn    varchar(12),
 conv_lptv_lic_prefix    varchar(10),
-displaced_cp_filed_date    datetime,
+displaced_cp_filed_date    date,
 no_change_lp_cp_ind    char(1),
 rule_73_6011_ind    char(1),
 rule_73_6012_ind    char(1),
@@ -809,8 +809,8 @@ repl_trans_line_ind    char(1),
 rule_73_850b_ind    char(1),
 rule_73_1675a_nc_ind    char(1),
 rule_73_1675a_ax_ind    char(1),
-orig_cp_app_expiration_date datetime,
-record_change_date    datetime
+orig_cp_app_expiration_date    date,
+record_change_date    date
 );
 
 -- nce_factors
@@ -833,10 +833,10 @@ total_points    int,
 divers_own_ind    char(1),
 min_first_service_ind    char(1),
 min_sec_service_ind    char(1),
-supplement_date    datetime,
+supplement_date    date,
 first_aural_service_ind    char(1),
 first_tribal_service_ind    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- ownership_capitalization
@@ -853,7 +853,7 @@ order_number    smallint,
 class_of_stock_flg    char(1),
 class_of_stock_other    varchar(20),
 voting_flg    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_contract
@@ -862,8 +862,8 @@ ownership_contract_id    int NOT NULL,
 application_id    int NOT NULL,
 contract_description    varchar(255),
 contract_person    varchar(255),
-execution_date    datetime,
-expiration_date    datetime,
+execution_date    date,
+expiration_date    date,
 order_number    smallint,
 agreement_type_lma    char(1),
 agreement_type_naa    char(1),
@@ -873,7 +873,7 @@ execution_date_year    smallint,
 expiration_date_month    char(3),
 expiration_date_year    smallint,
 expiration_date_na    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_exemptions
@@ -883,7 +883,7 @@ application_id    int NOT NULL,
 order_number    smallint NOT NULL,
 name    varchar(150),
 title    varchar(60),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_group
@@ -899,7 +899,7 @@ fac_service_o    varchar(2),
 app_arn    varchar(12),
 file_prefix    char(10),
 order_number    smallint,
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_interests
@@ -909,7 +909,7 @@ application_id    int NOT NULL,
 order_number    smallint NOT NULL,
 frn    varchar(10),
 name    varchar(150),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_other_int
@@ -936,7 +936,7 @@ positional_int_ent    char(1),
 positional_int_oth    char(1),
 positional_int_other_info varchar(20),
 votes_perc    decimal(4,1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_other_int_xml_data
@@ -963,7 +963,7 @@ positional_int_ent    char(1),
 positional_int_oth    char(1),
 positional_int_other_info varchar(20),
 votes_perc    decimal(4,1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_relationships
@@ -973,13 +973,13 @@ application_id    int NOT NULL,
 order_number    smallint NOT NULL,
 names    varchar(255),
 relationship_flg    char(2),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_report
 create table ownership_report (
 application_id    int NOT NULL,
-accurate_date    datetime,
+accurate_date    date,
 non_attributable_ind    char(1),
 attributable_ind    char(1),
 related_ind    char(1),
@@ -996,7 +996,7 @@ lic_name    varchar(60),
 org_chart_na    char(1),
 respondent_nature_flg    char(3),
 resp_interests_na    char(1),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- ownership_structure
@@ -1043,7 +1043,7 @@ street_address1    varchar(60),
 street_address2    varchar(60),
 zip1    char(5),
 zip2    char(4),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- party
@@ -1063,7 +1063,7 @@ party_phone    char(10),
 party_state    char(2),
 party_zip1    char(5),
 party_zip2    char(4),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- positional_int
@@ -1079,7 +1079,7 @@ membership_perc    float(13,6),
 owner_perc    float(13,6),
 assets_perc    float(13,6),
 order_number    smallint,
-last_update_date    datetime
+last_update_date    date
 );
 
 -- supp_facility
@@ -1088,12 +1088,12 @@ parent_facility_id    int NOT NULL,
 supp_type    varchar(5) NOT NULL,
 supp_callsign    varchar(12) NOT NULL,
 supp_fac_status    varchar(5),
-status_date    datetime,
+status_date    date,
 site_number    tinyint NOT NULL,
 fac_channel    int,
 comm_city    char(20),
 comm_state    char(2),
-last_update_date    datetime
+last_update_date    date
 );
 
 -- tv_app_indicators
@@ -1146,7 +1146,7 @@ dts_principal_comm_cover_flg    varchar(2),
 dts_combined_interference_ind    char(1),
 dts_trans_within_area_ind    char(1),
 dts_elev_pattern_varies_ind    char(1),
-last_change_date    datetime
+last_change_date    date
 );
 
 -- tv_eng_data
@@ -1223,7 +1223,7 @@ lic_ant_model_num    varchar(60),
 dt_emission_mask    char(1),
 site_number    tinyint NOT NULL,
 elevation_antenna_id    int,
-last_change_date    datetime
+last_change_date    date
 );
 
 -- End SQL
