@@ -28,5 +28,5 @@ TODOS
 . Add biennial ownership files not included in zip http://transition.fcc.gov/mb/databases/cdbs/ 
 . Build tables to represent code tables http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_code_table.html
 
-
+. Fix float(18) in tv engineering table
 
