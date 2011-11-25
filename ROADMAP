@@ -26,7 +26,10 @@ TODOS
 . Should I use datetime or date field type in mysql?
 
 . Add biennial ownership files not included in zip http://transition.fcc.gov/mb/databases/cdbs/ 
-. Build tables to represent code tables http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_code_table.html
+
+. Build one table to hold code look-ups {code, class, value} http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_code_table.html 
+. Convert field comments into reference-able tables http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_Engineering_Data_Description.pdf
 
 . Fix float(18) in tv engineering table
+ 
 
