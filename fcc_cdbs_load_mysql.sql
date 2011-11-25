@@ -218,9 +218,12 @@ last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
 LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/facility.dat'
 INTO TABLE facility
 FIELDS TERMINATED BY '|'
-(comm_city, comm_state, eeo_rpt_ind, fac_address1, fac_address2, fac_callsign, fac_channel, fac_city, fac_country, fac_frequency, fac_service, fac_state, fac_status_date, fac_type, facility_id, lic_expiration_date, fac_status, fac_zip1, fac_zip2, station_type, assoc_facility_id, callsign_eff_date, tsid_ntsc, tsid_dtv, digital_status, sat_tv, network_affil, nielsen_dma, @last_change_date)
+(comm_city, comm_state, eeo_rpt_ind, fac_address1, fac_address2, fac_callsign, fac_channel, fac_city, fac_country, fac_frequency, fac_service, fac_state, @fac_status_date, fac_type, facility_id, @lic_expiration_date, fac_status, fac_zip1, fac_zip2, station_type, assoc_facility_id, @callsign_eff_date, tsid_ntsc, tsid_dtv, digital_status, sat_tv, network_affil, nielsen_dma, @last_change_date)
 set
-last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+last_change_date = str_to_date(@last_change_date, '%m/%d/%Y'),
+lic_expiration_date = str_to_date(@lic_expiration_date, '%m/%d/%Y'),
+callsign_eff_date = str_to_date(@callsign_eff_date, '%m/%d/%Y'),
+fac_status_date = str_to_date(@fac_status_date, '%m/%d/%Y');
 
 -- fm_app_indicators
 -- load fm_app_indicators
