@@ -31,5 +31,10 @@ TODOS
 . Convert field comments into reference-able tables http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/_Engineering_Data_Description.pdf
 
 . Fix float(18) in tv engineering table
+
+IDEAS
+=====
+. Store CDBS Download in git repo.
+
  
 
