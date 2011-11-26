@@ -98,10 +98,19 @@ The publish CDBS field types include 17 custom defined fields.
 	url to varchar(255)
 
 
-6. CONVERTING TO MYSQL
+6. MYSQL
 ======================
 
 Floats have been defined as float(13,6) for most values and float(9,6) for percentage.
+
+Run script to download and uncompress file
+> ./cdbs_download_unix.sh
+
+Run commands to load data into mysql (this can be put into a script eventually)
+> mysql -v -u root -p cdbs < fcc_cdbs_ddl_mysql.sql
+> password: 
+> mysql -v -u root -p cdbs < fcc_cdbs_load_mysql.sql 
+> password:
 
 
 7. ACRONYMS
