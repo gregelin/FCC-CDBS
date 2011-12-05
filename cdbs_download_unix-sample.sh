@@ -23,7 +23,8 @@
 set srcUrlPath = 'http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/'
 set srcFile = 'all-cdbs-files.zip'
 set srcDownload = $srcUrlPath$srcFile
-set trgDir = '/codedata/FCC/data/public/cdbs/'
+# Update path to directory on your computer to store
+set trgDir = '/path/to/where/store/files/'
 set trgFile = $trgDir$srcFile
 set defVar2 = value
 
@@ -42,7 +43,15 @@ echo ""
 echo "Removing  into $trgFile."
 rm $trgFile
 
+echo ""
+echo "Create MySQL tables"
+# Update the line with your MySQL 'username' and 'password'
+mysql -v -uusername -ppassword cdbs < fcc_cdbs_ddl_mysql.sql
+
+echo ""
+echo "Load data into MySQL tables"
+# Update the line with your MySQL 'username' and 'password'
+mysql -v -uusername -ppassword cdbs < fcc_cdbs_load_mysql.sql 
+
 echo "All done."
 
-# mysql -v -u root -p cdbs < fcc_cdbs_ddl_mysql.sql
-# mysql -v -u root -p cdbs < fcc_cdbs_load_mysql.sql 
