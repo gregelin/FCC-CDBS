@@ -2,9 +2,9 @@ ROADMAP
 
 GOALS
 =====
-Create tools, scripts to make it easier for other people to use data.
-Work toward 10 minute installs and creation of update data (not counting load time).
-Want people to be up and running with data in less than one hour. 
+Create tools, scripts to for people to be able to start using data in 15 mins or less.
+Work toward 10 minute installs and creation of update data (not counting time to download and load data).
+Want people to be up and running with data in less than 15 minutes. 
 
 
 GENERAL
@@ -12,16 +12,18 @@ GENERAL
 1. Build an example import package to MySQL.
 2. Build import packages for SQL-Lite, Oracle, Sybase, SQL-Server, Access
 3. Automate change control if there is a change in the field structures.
-4. Create scripts for autoloading data each night, showing changes in data
-5. Create Quickstart de-normalized data products, like ownership on stations
-6. Create automated builds of virtual machines with info
-7. Create video screencasts of how to get started, video explanations of data tables.
-8. Create diff of what has changed from download of new files. Incorporate at least a local git store of data.
+4. Create scripts for auto downloading loading data each night
+5. Create scripts showing changes in data each day
+6. Create Quickstart de-normalized data products, like ownership on stations
+7. Create automated builds of virtual machines with info
+8. Create video screencasts of how to get started, video explanations of data tables.
+9. Create diff of what has changed from download of new files. Incorporate at least a local git store of data.
 
 
 TODOS
 =====
 . What are the relationships between tables? Where is documentation?
+. describe this as engineering subset
 . What indices should be created?
 . How to create unit tests for quality of data load? Hash keys?
 . Should I use datetime or date field type in mysql?
