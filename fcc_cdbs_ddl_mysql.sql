@@ -1226,4 +1226,28 @@ elevation_antenna_id    int,
 last_change_date    date
 );
 
+--
+-- Documentation tables
+--
+
+drop table if exists  doc_attributes;
+
+-- doc_attributes
+create table doc_attributes (
+grouping_name    varchar(24),
+table_name    varchar(32),
+column_name    varchar(32),
+entity_name    varchar(60),
+entity_attribute_name    varchar(120),
+entity_attribute_definition    varchar(255),
+key_field    varchar(12),
+data_type    varchar(12),
+source_database    varchar(24),
+source_table    varchar(72),
+source_column    varchar(72),
+notes    varchar(255)
+);
+
+
+
 -- End SQL

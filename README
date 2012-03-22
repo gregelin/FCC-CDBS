@@ -70,7 +70,38 @@ Other CDBS questions: James Bradshaw, james.bradshaw@fcc.gov
 TV
 All CDBS questions: Hossein Hashemzadeh, hossein.hashemzadeh@fcc.gov
 
-5. MAPPING OF CUSTOM USER-DEFINED DATA TYPES
+
+5. UNDERSTANDING CDBS FIELDS
+============================
+Explanatory notes on each field (columns) is also loaded into the database
+in the table doc_attributes. This makes it possible to present the name of the field
+and an explanation of the field as part of any application you build with the data.
+
+Field name is organized both by individual tables and logical grouping (grouping_name).
+The logical groups are:
+
+	am_eng  
+	fmtv_eng
+	application
+	tracking
+	common
+	facility
+	dtv_agreement_group
+	facility
+	Ownership
+	various
+
+The following query example returns explanatory information on network_affil field in the facility table.
+
+select column_name, entity_name, entity_attribute_name, entity_attribute_definition from doc_attributes where table_name = "facility" and column_name = "network_affil"
+
+select column_name, entity_name, entity_attribute_name, entity_attribute_definition from doc_attributes where table_name = "facility" and entity_attribute_name like "%license%"
+
+
+
+
+
+6. MAPPING OF CUSTOM USER-DEFINED DATA TYPES
 ============================================
 
 The publish CDBS data types include 17 custom defined fields. 
@@ -98,9 +129,11 @@ The publish CDBS field types include 17 custom defined fields.
 	url to varchar(255)
 
 
-6. MYSQL
-======================
+7. NOTES FOR DIFFERENT DATABASE SOFTWARE
+========================================
 
+MYSQL
+-----
 Floats have been defined as float(13,6) for most values and float(9,6) for percentage.
 
 Run script to download and uncompress file
@@ -113,14 +146,14 @@ Run commands to load data into mysql (this can be put into a script eventually)
 > password:
 
 
-7. ACRONYMS
+8. ACRONYMS
 ===========
 
 FCC: Federal Communication Commission
 CDBS: Consolidated DataBase System
 
 
-8. SEE ALSO
+9. SEE ALSO
 ===========
 
 1. CDBS Documentation page: http://transition.fcc.gov/mb/databases/cdbs/

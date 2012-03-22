@@ -9,19 +9,21 @@ Want people to be up and running with data in less than 15 minutes.
 
 GENERAL
 =======
-1. Build an example import package to MySQL.
+√ 1. Build an example import package to MySQL.
 2. Build import packages for SQL-Lite, Oracle, Sybase, SQL-Server, Access
 3. Automate change control if there is a change in the field structures.
-4. Create scripts for auto downloading loading data each night
+√ 4. Create scripts for auto downloading loading data each night
 5. Create scripts showing changes in data each day
 6. Create Quickstart de-normalized data products, like ownership on stations
 7. Create automated builds of virtual machines with info
 8. Create video screencasts of how to get started, video explanations of data tables.
 9. Create diff of what has changed from download of new files. Incorporate at least a local git store of data.
-
+10. Incorporate ownership files in autodownload
 
 TODOS
 =====
+. Improve tests, feedback in download script. (Script failing silently if files not downloaded.)
+
 . What are the relationships between tables? Where is documentation?
 . describe this as engineering subset
 . What indices should be created?
@@ -35,9 +37,11 @@ TODOS
 
 . Fix float(18) in tv engineering table
 
+
 IDEAS
 =====
 . Store CDBS Download in git repo.
+. Create autocomplete to look things up more easily
 
  
 

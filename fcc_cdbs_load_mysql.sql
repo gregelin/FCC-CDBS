@@ -483,4 +483,19 @@ CREATE INDEX facility_id ON facility (facility_id);
 CREATE INDEX facility_id ON call_sign_history (facility_id);
 CREATE INDEX callsign ON call_sign_history (callsign);
 
+
+--
+-- Documentation tables
+--
+
+-- doc_attributes
+-- load doc_attributes
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/Attributes_tab.txt'
+INTO TABLE doc_attributes
+FIELDS TERMINATED BY '\t'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r'
+(grouping_name, table_name, column_name, entity_name, entity_attribute_name, entity_attribute_definition, key_field, data_type, source_database, source_table, source_column, notes);
+
+
 -- End SQL
