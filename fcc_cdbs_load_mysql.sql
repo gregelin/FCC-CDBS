@@ -479,9 +479,9 @@ last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
 
 
 -- create indices
-CREATE INDEX facility_id ON facility (facility_id);
-CREATE INDEX facility_id ON call_sign_history (facility_id);
-CREATE INDEX callsign ON call_sign_history (callsign);
+CREATE INDEX facility_id2 ON facility (facility_id);
+CREATE INDEX facility_id3 ON call_sign_history (facility_id);
+CREATE INDEX callsign2 ON call_sign_history (callsign);
 
 
 --
