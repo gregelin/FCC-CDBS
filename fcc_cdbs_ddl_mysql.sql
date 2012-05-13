@@ -142,6 +142,7 @@ specified_hrs_range    varchar(25),
 augmented_ind    char(1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- am_augs
 create table am_augs (
@@ -152,6 +153,7 @@ radiation_aug    float(13,6),
 span_deg    float(13,6),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- am_eng_data
 create table am_eng_data (
@@ -171,6 +173,7 @@ feed_circ_other    varchar(255),
 feed_circ_type    varchar(2),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- am_towers
 create table am_towers (
@@ -200,6 +203,7 @@ faa_notified_ind    char(1),
 tower_type    char(1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- amcmnts
 create table amcmnts (
@@ -207,6 +211,7 @@ application_id    int,
 comment_type    char(5),
 comment    varchar(250)
 );
+SHOW WARNINGS;
 
 -- ant_make
 create table ant_make (
@@ -217,6 +222,7 @@ app_service    char(2) NOT NULL,
 standard_ind    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- ant_pattern
 create table ant_pattern (
@@ -226,6 +232,7 @@ field_value    float(13,6) NOT NULL,
 additional_az_num    smallint,
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- app_party
 create table app_party (
@@ -241,6 +248,7 @@ sig_present_ind    char(1),
 sig_name    varchar(60),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- app_tracking
 create table app_tracking (
@@ -256,6 +264,7 @@ accepted_date    date,
 tolling_code    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- application
 create table application (
@@ -285,6 +294,7 @@ comm_zip1    char(5),
 comm_zip2    char(4),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- call_sign_history
 create table call_sign_history (
@@ -295,6 +305,7 @@ callsign_seq_id    tinyint NOT NULL,
 facility_id    int NOT NULL,
 record_change_date    date
 );
+SHOW WARNINGS;
 
 -- dtv_agreement_group
 create table dtv_agreement_group (
@@ -306,6 +317,7 @@ dtv_agreement_group_id    int NOT NULL,
 name    varchar(60),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- dtv_allotment
 create table dtv_allotment (
@@ -327,6 +339,7 @@ biased_lat    float(13,6),
 biased_long    float(13,6),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- dtv_channel_assignments
 create table dtv_channel_assignments (
@@ -346,6 +359,7 @@ da_ind    char(1),
 pre_dtv_channel    int,
 callsign    varchar(12)
 );
+SHOW WARNINGS;
 
 -- dtv_facility
 create table dtv_facility (
@@ -354,6 +368,7 @@ dtv_fac_status    char(5),
 dtv_channel    int,
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- dtv_transition
 create table dtv_transition (
@@ -460,6 +475,7 @@ an_objection_callsign    char(12),
 an_revocation_ind    char(1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- elevation_ant_make
 create table elevation_ant_make (
@@ -468,6 +484,7 @@ ant_model_num    char(60) NOT NULL,
 elevation_antenna_id    int NOT NULL,
 ant_comment    varchar(255)
 );
+SHOW WARNINGS;
 
 -- elevation_pattern
 create table elevation_pattern (
@@ -512,6 +529,7 @@ field_value350    float(13,6),
 elevation_antenna_id    int NOT NULL,
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- elevation_pattern_addl
 create table elevation_pattern_addl (
@@ -523,6 +541,7 @@ additional_az_num    smallint,
 elevation_antenna_id    int,
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- fac_party
 create table fac_party (
@@ -531,6 +550,7 @@ party_id    int NOT NULL,
 party_type    char(5) NOT NULL,
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- facility
 create table facility (
@@ -564,6 +584,7 @@ network_affil    varchar(100),
 nielsen_dma    varchar(60),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- fm_app_indicators
 create table fm_app_indicators (
@@ -574,6 +595,7 @@ no_rotation_ind    varchar(1),
 rule_73_215_req_ind    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- fm_eng_data
 create table fm_eng_data (
@@ -649,6 +671,7 @@ trans_power_output_w    int,
 market_group_num    varchar(7),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- frn_history
 create table frn_history (
@@ -659,6 +682,7 @@ application_id    int,
 date_inserted    date,
 valid_ind    char(1)
 );
+SHOW WARNINGS;
 
 -- fmcmnts
 create table fmcmnts (
@@ -666,6 +690,7 @@ application_id    int,
 comment_type    char(5),
 comment    varchar(250)
 );
+SHOW WARNINGS;
 
 -- gen_app_indicators
 create table gen_app_indicators (
@@ -673,6 +698,7 @@ application_id    int NOT NULL,
 edu_comm_flg    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- if_notification
 create table if_notification (
@@ -696,6 +722,7 @@ analog_erp    float(13,6),
 digital_erp    float(13,6),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- int_translator
 create table int_translator (
@@ -714,6 +741,7 @@ trans_input_channel    int,
 prim_facility_id    int,
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- intl_tracking
 create table intl_tracking (
@@ -740,6 +768,7 @@ notified_date    date,
 intl_status    char(6),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- lic_app_indicators
 create table lic_app_indicators (
@@ -812,6 +841,7 @@ rule_73_1675a_ax_ind    char(1),
 orig_cp_app_expiration_date    date,
 record_change_date    date
 );
+SHOW WARNINGS;
 
 -- nce_factors
 create table nce_factors (
@@ -838,6 +868,7 @@ first_aural_service_ind    char(1),
 first_tribal_service_ind    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_capitalization
 create table ownership_capitalization (
@@ -875,6 +906,7 @@ expiration_date_year    smallint,
 expiration_date_na    char(1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_exemptions
 create table ownership_exemptions (
@@ -885,6 +917,7 @@ name    varchar(150),
 title    varchar(60),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_group
 create table ownership_group (
@@ -911,6 +944,7 @@ frn    varchar(10),
 name    varchar(150),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_other_int
 create table ownership_other_int (
@@ -938,6 +972,7 @@ positional_int_other_info varchar(20),
 votes_perc    decimal(4,1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_other_int_xml_data
 create table ownership_other_int_xml_data (
@@ -965,6 +1000,7 @@ positional_int_other_info varchar(20),
 votes_perc    decimal(4,1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_relationships
 create table ownership_relationships (
@@ -975,6 +1011,7 @@ names    varchar(255),
 relationship_flg    char(2),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_report
 create table ownership_report (
@@ -998,6 +1035,7 @@ respondent_nature_flg    char(3),
 resp_interests_na    char(1),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- ownership_structure
 create table ownership_structure (
@@ -1045,6 +1083,7 @@ zip1    char(5),
 zip2    char(4),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- party
 create table party (
@@ -1065,6 +1104,7 @@ party_zip1    char(5),
 party_zip2    char(4),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- positional_int
 create table positional_int (
@@ -1081,6 +1121,7 @@ assets_perc    float(13,6),
 order_number    smallint,
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- supp_facility
 create table supp_facility (
@@ -1095,6 +1136,7 @@ comm_city    char(20),
 comm_state    char(2),
 last_update_date    date
 );
+SHOW WARNINGS;
 
 -- tv_app_indicators
 create table tv_app_indicators (
@@ -1148,6 +1190,7 @@ dts_trans_within_area_ind    char(1),
 dts_elev_pattern_varies_ind    char(1),
 last_change_date    date
 );
+SHOW WARNINGS;
 
 -- tv_eng_data
 create table tv_eng_data (
@@ -1225,6 +1268,7 @@ site_number    tinyint NOT NULL,
 elevation_antenna_id    int,
 last_change_date    date
 );
+SHOW WARNINGS;
 
 --
 -- Documentation tables
@@ -1247,6 +1291,7 @@ source_table    varchar(72),
 source_column    varchar(72),
 notes    varchar(255)
 );
+SHOW WARNINGS;
 
 
 

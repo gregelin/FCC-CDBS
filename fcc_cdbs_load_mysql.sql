@@ -36,6 +36,8 @@
 -- Assumes tables are empty
 -- --------------------------------------------------------------------
 
+set max_error_count=10;
+
 -- am_ant_sys
 -- load am_ant_sys
 LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_ant_sys.dat'
@@ -44,6 +46,7 @@ FIELDS TERMINATED BY '|'
 (ant_mode, ant_sys_id, application_id, aug_count, bad_data_switch, domestic_pattern, dummy_data_switch, efficiency_restricted, efficiency_theoretical, feed_circ_other, feed_circ_type, hours_operation, lat_deg, lat_dir, lat_min, lat_sec, lon_deg, lon_dir, lon_min, lon_sec, q_factor, q_factor_custom_ind, power, rms_augmented, rms_standard, rms_theoretical, tower_count, eng_record_type, biased_lat, biased_long, mainkey, am_dom_status, lat_whole_secs, lon_whole_secs, ant_dir_ind, grandfathered_ind, specified_hrs_range, augmented_ind, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- load am_augs
 LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_augs.dat'
@@ -52,6 +55,7 @@ FIELDS TERMINATED BY '|'
 (ant_sys_id, aug_id, azimuth_deg, radiation_aug, span_deg, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- am_eng_data
 -- load am_eng_data
@@ -61,6 +65,7 @@ FIELDS TERMINATED BY '|'
 (ant_monitor, application_id, broadcast_schedule, encl_fence_dist, facility_id, sampl_sys_ind, station_class, time_zone, region_2_class, am_dom_status, old_station_class, specified_hours, feed_circ_other, feed_circ_type, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- am_towers
 -- load am_towers
@@ -70,6 +75,7 @@ FIELDS TERMINATED BY '|'
 (ant_sys_id, asrn_id, elec_hgt_deg, field_ratio, hag_no_obst, hgt_overall_mtr, hgt_rad_ab, hgt_radiator_mtr, orientation_deg, phasing_deg, rad_hgt_deg, spacing_deg, top_loaded_switch, topload_a, topload_b, topload_c, topload_d, tower_num, tower_pl_codes, tower_ref_switch, asrn_na_ind, topload_apparent_hgt, faa_notified_ind, tower_type, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- amcmnts
 -- load amcmnts
@@ -77,6 +83,7 @@ LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/amcmnts.dat'
 INTO TABLE amcmnts
 FIELDS TERMINATED BY '|'
 (application_id, comment_type, comment);
+SHOW WARNINGS;
 
 -- ant_make
 -- load ant_make
@@ -86,6 +93,7 @@ FIELDS TERMINATED BY '|'
 (antenna_id, ant_make, ant_model_num, app_service, standard_ind, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ant_pattern
 -- load ant_pattern
@@ -95,6 +103,7 @@ FIELDS TERMINATED BY '|'
 (antenna_id, azimuth, field_value, additional_az_num, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- app_party
 -- load app_party
@@ -105,6 +114,7 @@ FIELDS TERMINATED BY '|'
 set
 cert_date = str_to_date(@cert_date, '%m/%d/%Y'),
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- app_tracking
 -- load app_tracking
@@ -119,6 +129,7 @@ cp_exp_date = str_to_date(@cp_exp_date, '%m/%d/%Y'),
 amendment_stamped_date = str_to_date(@amendment_stamped_date, '%m/%d/%Y'),
 accepted_date = str_to_date(@accepted_date, '%m/%d/%Y'),
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- application
 -- load application
@@ -128,6 +139,7 @@ FIELDS TERMINATED BY '|'
 (app_arn, app_service, application_id, facility_id, file_prefix, comm_city, comm_state, fac_frequency, station_channel, fac_callsign, general_app_service, app_type, paper_filed_ind, dtv_type, frn, shortform_app_arn, shortform_file_prefix, corresp_ind, assoc_facility_id, network_affil, sat_tv_ind, comm_county, comm_zip1, comm_zip2, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- call_sign_history
 -- load call_sign_history
@@ -138,6 +150,7 @@ FIELDS TERMINATED BY '|'
 set
 begin_date = str_to_date(@begin_date, '%m/%d/%Y'),
 record_change_date = str_to_date(@record_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- dtv_agreement_group
 -- load dtv_agreement_group
@@ -147,6 +160,7 @@ FIELDS TERMINATED BY '|'
 (application_id, fac_callsign, facility_id, order_num, dtv_agreement_group_id, name, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- dtv_allotment
 -- load dtv_allotment
@@ -156,6 +170,7 @@ FIELDS TERMINATED BY '|'
 (state, city, analog_channel, digital_channel, erp, haat, lat_deg, lat_dir, lat_min, lat_sec, lon_deg, lon_dir, lon_min, lon_sec, biased_lat, biased_long, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- dtv_channel_assignments
 -- load dtv_channel_assignments
@@ -163,6 +178,7 @@ LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_channel_assignments.d
 INTO TABLE dtv_channel_assignments
 FIELDS TERMINATED BY '|'
 (facility_id, state, city, ntsc_channel, post_dtv_channel, erp, haat, antenna_id, latitude, longitude, rcamsl, ref_azimuth, da_ind, pre_dtv_channel, callsign);
+SHOW WARNINGS;
 
 -- dtv_facility
 -- load dtv_facility
@@ -172,6 +188,7 @@ FIELDS TERMINATED BY '|'
 (facility_id, dtv_fac_status, dtv_channel, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- dtv_transition
 -- load dtv_transition
@@ -191,6 +208,7 @@ termination_date_aff = str_to_date(@termination_date_aff, '%m/%d/%Y'),
 st_analog_nightlight_end_ = str_to_date(@st_analog_nightlight_end_, '%m/%d/%Y'),
 termination_date_nce = str_to_date(@termination_date_nce, '%m/%d/%Y'),
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- elevation_ant_make
 -- load elevation_ant_make
@@ -198,6 +216,7 @@ LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/elevation_ant_make.dat'
 INTO TABLE elevation_ant_make
 FIELDS TERMINATED BY '|'
 (ant_make, ant_model_num, elevation_antenna_id, ant_comment);
+SHOW WARNINGS;
 
 -- elevation_pattern
 -- load elevation_pattern
@@ -207,6 +226,7 @@ FIELDS TERMINATED BY '|'
 (depression_angle, field_value, field_value0, field_value10, field_value20, field_value30, field_value40, field_value50, field_value60, field_value70, field_value80, field_value90, field_value100, field_value110, field_value120, field_value130, field_value140, field_value150, field_value160, field_value170, field_value180, field_value190, field_value200, field_value210, field_value220, field_value230, field_value240, field_value250, field_value260, field_value270, field_value280, field_value290, field_value300, field_value310, field_value320, field_value330, field_value340, field_value350, elevation_antenna_id, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- elevation_pattern_addl
 -- load elevation_pattern_addl
@@ -216,6 +236,7 @@ FIELDS TERMINATED BY '|'
 (site_number, depression_angle, azimuth, field_value, additional_az_num, elevation_antenna_id, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- fac_party
 -- load fac_party
@@ -225,6 +246,7 @@ FIELDS TERMINATED BY '|'
 (facility_id, party_id, party_type, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- facility
 -- load facility
@@ -237,6 +259,7 @@ last_change_date = str_to_date(@last_change_date, '%m/%d/%Y'),
 lic_expiration_date = str_to_date(@lic_expiration_date, '%m/%d/%Y'),
 callsign_eff_date = str_to_date(@callsign_eff_date, '%m/%d/%Y'),
 fac_status_date = str_to_date(@fac_status_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- fm_app_indicators
 -- load fm_app_indicators
@@ -246,6 +269,7 @@ FIELDS TERMINATED BY '|'
 (application_id, bt_ind, da_ind, no_rotation_ind, rule_73_215_req_ind, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- fm_eng_data
 -- load fm_eng_data
@@ -255,6 +279,7 @@ FIELDS TERMINATED BY '|'
 (ant_input_pwr, ant_max_pwr_gain, ant_polarization, ant_rotation, antenna_id, antenna_type, application_id, asd_service, asrn_na_ind, asrn, avg_horiz_pwr_gain, biased_lat, biased_long, border_code, border_dist, docket_num, effective_erp, elev_amsl, elev_bldg_ag, eng_record_type, facility_id, fm_dom_status, gain_area, haat_horiz_rc_mtr, haat_vert_rc_mtr, hag_horiz_rc_mtr, hag_overall_mtr, hag_vert_rc_mtr, horiz_bt_erp, horiz_erp, lat_deg, lat_dir, lat_min, lat_sec, lon_deg, lon_dir, lon_min, lon_sec, loss_area, max_ant_pwr_gain, max_haat, max_horiz_erp, max_vert_erp, multiplexor_loss, power_output_vis_kw, predict_coverage_area, predict_pop, rcamsl_horiz_mtr, rcamsl_vert_mtr, station_class, terrain_data_src, vert_bt_erp, vert_erp, num_sections, present_area, percent_change, spacing, terrain_data_src_other, trans_power_output, mainkey, lat_whole_secs, lon_whole_secs, station_channel, lic_ant_make, lic_ant_model_num, min_horiz_erp, haat_horiz_calc_ind, erp_w, trans_power_output_w, market_group_num, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- frn_history
 -- load frn_history
@@ -262,6 +287,7 @@ LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/frn_history.dat'
 INTO TABLE frn_history
 FIELDS TERMINATED BY '|'
 (frn_history_id, facility_id, frn, application_id, date_inserted, valid_ind);
+SHOW WARNINGS;
 
 -- fmcmnts
 -- load fmcmnts
@@ -269,6 +295,7 @@ LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/fmcmnts.dat'
 INTO TABLE fmcmnts
 FIELDS TERMINATED BY '|'
 (application_id, comment_type, comment);
+SHOW WARNINGS;
 
 -- gen_app_indicators
 -- load gen_app_indicators
@@ -278,6 +305,7 @@ FIELDS TERMINATED BY '|'
 (application_id, edu_comm_flg, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- if_notification
 -- load if_notification
@@ -290,6 +318,7 @@ broadcast_date = str_to_date(@broadcast_date, '%m/%d/%Y'),
 test_date = str_to_date(@test_date, '%m/%d/%Y'),
 resolved_date = str_to_date(@resolved_date, '%m/%d/%Y'),
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- int_translator
 -- load int_translator
@@ -299,6 +328,7 @@ FIELDS TERMINATED BY '|'
 (application_id, delivery_method, prim_callsign, prim_comm_city, prim_comm_state, prim_sta_out_channel, primary_via, scnd_comm_city, scnd_comm_state, third_comm_city, third_comm_state, trans_input_channel, prim_facility_id, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- intl_tracking
 -- load intl_tracking
@@ -314,6 +344,7 @@ proposed_date = str_to_date(@proposed_date, '%m/%d/%Y'),
 referred_date = str_to_date(@referred_date, '%m/%d/%Y'),
 notified_date = str_to_date(@notified_date, '%m/%d/%Y'),
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- lic_app_indicators
 -- load lic_app_indicators
@@ -325,6 +356,7 @@ set
 displaced_cp_filed_date = str_to_date(@displaced_cp_filed_date, '%m/%d/%Y'),
 orig_cp_app_expiration_date = str_to_date(@orig_cp_app_expiration_date, '%m/%d/%Y'),
 record_change_date = str_to_date(@record_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 
 -- nce_factors
@@ -345,6 +377,7 @@ FIELDS TERMINATED BY '|'
 (ownership_capitalization_id, application_id, class_of_stock, voting_ind, authorized_shares, issued_shares, treasury_shares, unissued_shares, order_number, class_of_stock_flg, class_of_stock_other, voting_flg, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_contract
 -- load ownership_contract
@@ -356,6 +389,7 @@ set
 execution_date = str_to_date(@execution_date, '%m/%d/%Y'),
 expiration_date = str_to_date(@expiration_date, '%m/%d/%Y'),
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_exemptions
 -- load ownership_exemptions
@@ -365,6 +399,7 @@ FIELDS TERMINATED BY '|'
 (ownership_exemptions_id, application_id, order_number, name, title, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_group
 -- load ownership_group
@@ -374,6 +409,7 @@ FIELDS TERMINATED BY '|'
 (ownership_group_id, main_application_id, fac_callsign, facility_id, fac_service, comm_city, comm_state, fac_service_o, app_arn, file_prefix, order_number, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_interests
 -- load ownership_interests
@@ -383,6 +419,7 @@ FIELDS TERMINATED BY '|'
 (ownership_interests_id, application_id, order_number, frn, name, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_other_int
 -- load ownership_other_int
@@ -411,6 +448,7 @@ FIELDS TERMINATED BY '|'
 (ownership_relationships_i, application_id, order_number, names, relationship_flg, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_report
 -- load ownership_report
@@ -421,6 +459,7 @@ FIELDS TERMINATED BY '|'
 set
 accurate_date = str_to_date(@accurate_date, '%m/%d/%Y'),
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- ownership_structure
 -- load ownership_structure
@@ -430,6 +469,7 @@ FIELDS TERMINATED BY '|'
 (ownership_structure_id, application_id, name_address, gender_flg, ethnicity_flg, race_flg, citizenship, positional_int, votes_perc, equity_perc, active_ind, office_held, interest_perc, occupation, appointed_by, existing_interests, order_number, assets_perc, entity_exemption_ind, frn, listing_type_flg, personal_info_na, positional_int_crd, positional_int_dir, positional_int_gen, positional_int_inv, positional_int_lim, positional_int_llc, positional_int_off, positional_int_oth, positional_int_own, positional_int_stk, positional_int_other_info, relationship_flg, name, city, country, state, street_address1, street_address2, zip1, zip2, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- party
 -- load party
@@ -448,6 +488,7 @@ FIELDS TERMINATED BY '|'
 (application_id, citizenship, name_address, equity_perc, votes_perc, title, boardmember_ind, membership_perc, owner_perc, assets_perc, order_number, @last_update_date)
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- supp_facility
 -- load supp_facility
@@ -458,6 +499,7 @@ FIELDS TERMINATED BY '|'
 set
 status_date = str_to_date(@status_date, '%m/%d/%Y'),
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- tv_app_indicators
 -- load tv_app_indicators
@@ -467,6 +509,7 @@ FIELDS TERMINATED BY '|'
 (ant_struc_reqs_ind, application_id, bt_used_ind, da_ind, elec_bt_prop_ind, int_compl_ind, mech_bt_prop_ind, rule_73_1660_ind, rule_73_607_ind, rule_73_610_ind, rule_73_614_ind, rule_73_685ab_ind, coverage_exhibit_ind, rule_73_685dg_ind, dummy_tx_flag, da_exhibit_ind, rule_74_705_ind, rule_74_706_ind, rule_74_707_ind, rule_73_622_ind, ant_5km_ind, rule_73_62_ind, rule_1_1307_ind, rule_73_625_ind, rad_astr_ind, faa_notified_ind, rule_73_623a_ind, no_rotation_ind, rel_field_values_na, studio_in_comm_ind, rule_73_1690c_3_ind, rule_74_786d_ind, no_suitable_incore_ind, rule_74_786e_wirels_ind, rule_74_786e_agr_ind, rule_74_786e_notif_ind, noise_limited_ind, population_match_ind, maximization_ind, site_number, interference_prot_ind, dts_covers_all_area_ind, dts_coverage_within_area_flg, dts_coverage_contiguous_ind, dts_principal_comm_cover_flg, dts_combined_interference_ind, dts_trans_within_area_ind, dts_elev_pattern_varies_ind, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 -- tv_eng_data
 -- load tv_eng_data
@@ -476,12 +519,18 @@ FIELDS TERMINATED BY '|'
 (ant_input_pwr, ant_max_pwr_gain, ant_polarization, antenna_id, antenna_type, application_id, asrn_na_ind, asrn, aural_freq, avg_horiz_pwr_gain, biased_lat, biased_long, border_code, carrier_freq, docket_num, effective_erp, electrical_deg, elev_amsl, elev_bldg_ag, eng_record_type, fac_zone, facility_id, freq_offset, gain_area, haat_rc_mtr, hag_overall_mtr, hag_rc_mtr, horiz_bt_erp, lat_deg, lat_dir, lat_min, lat_sec, lon_deg, lon_dir, lon_min, lon_sec, loss_area, max_ant_pwr_gain, max_erp_dbk, max_erp_kw, max_haat, mechanical_deg, multiplexor_loss, power_output_vis_dbk, power_output_vis_kw, predict_coverage_area, predict_pop, terrain_data_src_other, terrain_data_src, tilt_towards_azimuth, true_deg, tv_dom_status, upperband_freq, vert_bt_erp, visual_freq, vsd_service, rcamsl_horiz_mtr, ant_rotation, input_trans_line, max_erp_to_hor, trans_line_loss, lottery_group, analog_channel, lat_whole_secs, lon_whole_secs, max_erp_any_angle, station_channel, lic_ant_make, lic_ant_model_num, dt_emission_mask, site_number, elevation_antenna_id, @last_change_date)
 set
 last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
+SHOW WARNINGS;
 
 
 -- create indices
 CREATE INDEX facility_id2 ON facility (facility_id);
+SHOW WARNINGS;
+
 CREATE INDEX facility_id3 ON call_sign_history (facility_id);
+SHOW WARNINGS;
+
 CREATE INDEX callsign2 ON call_sign_history (callsign);
+SHOW WARNINGS;
 
 
 --
@@ -496,6 +545,7 @@ FIELDS TERMINATED BY '\t'
 OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\r'
 (grouping_name, table_name, column_name, entity_name, entity_attribute_name, entity_attribute_definition, key_field, data_type, source_database, source_table, source_column, notes);
+SHOW WARNINGS;
 
 
 -- End SQL
