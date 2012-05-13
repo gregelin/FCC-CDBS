@@ -1,0 +1,8 @@
+README_CHANGELOG
+
+
+05.13.2012
+	- Add SHOW WARNING commands to fcc_cdbs_load_mysql.sql
+	- Resolve Issue #2 large number of MYSQL Warnings on loading data. Added variables and checks to insure float and int values that were blank in source data files would be converted to null values.
+	- Fix fields on table elevation_pattern_addl to match 1/20/12 updated field descriptions.
+	- Add README_CHANGELOG to repository.
