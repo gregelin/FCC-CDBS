@@ -207,7 +207,7 @@ SHOW WARNINGS;
 
 -- amcmnts
 create table amcmnts (
-application_id    int,
+application_id    int NOT NULL,
 comment_type    char(5),
 comment    varchar(250)
 );
@@ -532,16 +532,28 @@ last_update_date    date
 SHOW WARNINGS;
 
 -- elevation_pattern_addl
+-- new version 05/13/12
 create table elevation_pattern_addl (
-site_number    tinyint NOT NULL,
-depression_angle    float(13,6) NOT NULL,
 azimuth    float(13,6) NOT NULL,
-field_value    float(13,6) NOT NULL,
-additional_az_num    smallint,
+depression_angle    float(13,6) NOT NULL,
 elevation_antenna_id    int,
+field_value    float(13,6) NOT NULL,
 last_update_date    date
 );
 SHOW WARNINGS;
+
+-- depcreated version
+-- create table elevation_pattern_addl (
+-- site_number    tinyint NOT NULL,
+-- depression_angle    float(13,6) NOT NULL,
+-- azimuth    float(13,6) NOT NULL,
+-- field_value    float(13,6) NOT NULL,
+-- additional_az_num    smallint,
+-- elevation_antenna_id    int,
+-- last_update_date    date
+-- );
+-- SHOW WARNINGS;
+
 
 -- fac_party
 create table fac_party (

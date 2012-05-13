@@ -19,6 +19,7 @@ GENERAL
 8. Create video screencasts of how to get started, video explanations of data tables.
 9. Create diff of what has changed from download of new files. Incorporate at least a local git store of data.
 10. Incorporate ownership files in autodownload
+11. Figure out how to track MYSQL Warnings during load in a separate file and provide output.
 
 TODOS
 =====
