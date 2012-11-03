@@ -791,7 +791,8 @@ SHOW WARNINGS;
 
 -- doc_attributes
 -- load doc_attributes
-LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/Attributes_tab.txt'
+-- This file is informational only and is not yet published on FCC site.
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/docs/Attributes_tab.txt'
 INTO TABLE doc_attributes
 FIELDS TERMINATED BY '\t'
 OPTIONALLY ENCLOSED BY '"'
