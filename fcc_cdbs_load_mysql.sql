@@ -41,7 +41,7 @@ set names utf8;
 
 -- am_ant_sys
 -- load am_ant_sys
-LOAD DATA LOCAL INFILE 'cdbs_files/am_ant_sys.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_ant_sys.dat'
 INTO TABLE am_ant_sys
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -64,7 +64,7 @@ SHOW WARNINGS;
 
 
 -- load am_augs
-LOAD DATA LOCAL INFILE 'cdbs_files/am_augs.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_augs.dat'
 INTO TABLE am_augs
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -79,7 +79,7 @@ SHOW WARNINGS;
 
 -- am_eng_data
 -- load am_eng_data
-LOAD DATA LOCAL INFILE 'cdbs_files/am_eng_data.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_eng_data.dat'
 INTO TABLE am_eng_data
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -92,7 +92,7 @@ SHOW WARNINGS;
 
 -- am_towers
 -- load am_towers
-LOAD DATA LOCAL INFILE 'cdbs_files/am_towers.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/am_towers.dat'
 INTO TABLE am_towers
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -120,7 +120,7 @@ SHOW WARNINGS;
 
 -- amcmnts
 -- load amcmnts
-LOAD DATA LOCAL INFILE 'cdbs_files/amcmnts.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/amcmnts.dat'
 INTO TABLE amcmnts
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -130,7 +130,7 @@ SHOW WARNINGS;
 
 -- ant_make
 -- load ant_make
-LOAD DATA LOCAL INFILE 'cdbs_files/ant_make.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ant_make.dat'
 INTO TABLE ant_make
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -142,7 +142,7 @@ SHOW WARNINGS;
 
 -- ant_pattern
 -- load ant_pattern
-LOAD DATA LOCAL INFILE 'cdbs_files/ant_pattern.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ant_pattern.dat'
 INTO TABLE ant_pattern
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -155,7 +155,7 @@ SHOW WARNINGS;
 
 -- app_party
 -- load app_party
-LOAD DATA LOCAL INFILE 'cdbs_files/app_party.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/app_party.dat'
 INTO TABLE app_party
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -169,7 +169,7 @@ SHOW WARNINGS;
 
 -- app_tracking
 -- load app_tracking
-LOAD DATA LOCAL INFILE 'cdbs_files/app_tracking.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/app_tracking.dat'
 INTO TABLE app_tracking
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -186,7 +186,7 @@ SHOW WARNINGS;
 
 -- application
 -- load application
-LOAD DATA LOCAL INFILE 'cdbs_files/application.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/application.dat'
 INTO TABLE application
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -200,7 +200,7 @@ SHOW WARNINGS;
 
 -- call_sign_history
 -- load call_sign_history
-LOAD DATA LOCAL INFILE 'cdbs_files/call_sign_history.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/call_sign_history.dat'
 INTO TABLE call_sign_history
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -213,7 +213,7 @@ SHOW WARNINGS;
 
 -- dtv_agreement_group
 -- load dtv_agreement_group
-LOAD DATA LOCAL INFILE 'cdbs_files/dtv_agreement_group.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_agreement_group.dat'
 INTO TABLE dtv_agreement_group
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -225,7 +225,7 @@ SHOW WARNINGS;
 
 -- dtv_allotment
 -- load dtv_allotment
-LOAD DATA LOCAL INFILE 'cdbs_files/dtv_allotment.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_allotment.dat'
 INTO TABLE dtv_allotment
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -237,7 +237,7 @@ SHOW WARNINGS;
 
 -- dtv_channel_assignments
 -- load dtv_channel_assignments
-LOAD DATA LOCAL INFILE 'cdbs_files/dtv_channel_assignments.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_channel_assignments.dat'
 INTO TABLE dtv_channel_assignments
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -251,7 +251,7 @@ SHOW WARNINGS;
 
 -- dtv_facility
 -- load dtv_facility
-LOAD DATA LOCAL INFILE 'cdbs_files/dtv_facility.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_facility.dat'
 INTO TABLE dtv_facility
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -262,7 +262,7 @@ SHOW WARNINGS;
 
 -- dtv_transition
 -- load dtv_transition
-LOAD DATA LOCAL INFILE 'cdbs_files/dtv_transition.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/dtv_transition.dat'
 INTO TABLE dtv_transition
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -294,7 +294,7 @@ SHOW WARNINGS;
 
 -- elevation_ant_make
 -- load elevation_ant_make
-LOAD DATA LOCAL INFILE 'cdbs_files/elevation_ant_make.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/elevation_ant_make.dat'
 INTO TABLE elevation_ant_make
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -304,7 +304,7 @@ SHOW WARNINGS;
 
 -- elevation_pattern
 -- load elevation_pattern
-LOAD DATA LOCAL INFILE 'cdbs_files/elevation_pattern.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/elevation_pattern.dat'
 INTO TABLE elevation_pattern
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -354,7 +354,7 @@ SHOW WARNINGS;
 -- elevation_pattern_addl
 -- load elevation_pattern_addl
 -- new version 05/13/12
-LOAD DATA LOCAL INFILE 'cdbs_files/elevation_pattern_addl.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/elevation_pattern_addl.dat'
 INTO TABLE elevation_pattern_addl
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -364,7 +364,7 @@ last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 SHOW WARNINGS;
 
 -- deprecated version 
--- LOAD DATA LOCAL INFILE 'cdbs_files/elevation_pattern_addl.dat'
+-- LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/elevation_pattern_addl.dat'
 -- INTO TABLE elevation_pattern_addl
 -- FIELDS TERMINATED BY '|'
 -- LINES TERMINATED BY '^|\n'
@@ -388,7 +388,7 @@ SHOW WARNINGS;
 
 -- fac_party
 -- load fac_party
-LOAD DATA LOCAL INFILE 'cdbs_files/fac_party.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/fac_party.dat'
 INTO TABLE fac_party
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -401,7 +401,7 @@ SHOW WARNINGS;
 
 -- facility
 -- load facility
-LOAD DATA LOCAL INFILE 'cdbs_files/facility.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/facility.dat'
 INTO TABLE facility
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -420,7 +420,7 @@ SHOW WARNINGS;
 
 -- fm_app_indicators
 -- load fm_app_indicators
-LOAD DATA LOCAL INFILE 'cdbs_files/fm_app_indicators.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/fm_app_indicators.dat'
 INTO TABLE fm_app_indicators
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -432,7 +432,7 @@ SHOW WARNINGS;
 
 -- fm_eng_data
 -- load fm_eng_data
-LOAD DATA LOCAL INFILE 'cdbs_files/fm_eng_data.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/fm_eng_data.dat'
 INTO TABLE fm_eng_data
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -453,7 +453,7 @@ SHOW WARNINGS;
 
 -- frn_history
 -- load frn_history
-LOAD DATA LOCAL INFILE 'cdbs_files/frn_history.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/frn_history.dat'
 INTO TABLE frn_history
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -463,7 +463,7 @@ SHOW WARNINGS;
 
 -- fmcmnts
 -- load fmcmnts
-LOAD DATA LOCAL INFILE 'cdbs_files/fmcmnts.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/fmcmnts.dat'
 INTO TABLE fmcmnts
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -473,7 +473,7 @@ SHOW WARNINGS;
 
 -- gen_app_indicators
 -- load gen_app_indicators
-LOAD DATA LOCAL INFILE 'cdbs_files/gen_app_indicators.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/gen_app_indicators.dat'
 INTO TABLE gen_app_indicators
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -485,7 +485,7 @@ SHOW WARNINGS;
 
 -- if_notification
 -- load if_notification
-LOAD DATA LOCAL INFILE 'cdbs_files/if_notification.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/if_notification.dat'
 INTO TABLE if_notification
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -503,7 +503,7 @@ SHOW WARNINGS;
 
 -- int_translator
 -- load int_translator
-LOAD DATA LOCAL INFILE 'cdbs_files/int_translator.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/int_translator.dat'
 INTO TABLE int_translator
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -518,7 +518,7 @@ SHOW WARNINGS;
 
 -- intl_tracking
 -- load intl_tracking
-LOAD DATA LOCAL INFILE 'cdbs_files/intl_tracking.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/intl_tracking.dat'
 INTO TABLE intl_tracking
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -536,7 +536,7 @@ SHOW WARNINGS;
 
 -- lic_app_indicators
 -- load lic_app_indicators
-LOAD DATA LOCAL INFILE 'cdbs_files/lic_app_indicators.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/lic_app_indicators.dat'
 INTO TABLE lic_app_indicators
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -550,7 +550,7 @@ SHOW WARNINGS;
 
 -- nce_factors
 -- load nce_factors
-LOAD DATA LOCAL INFILE 'cdbs_files/nce_factors.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/nce_factors.dat'
 INTO TABLE nce_factors
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -563,7 +563,7 @@ last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
 
 -- ownership_capitalization
 -- load ownership_capitalization
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_capitalization.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_capitalization.dat'
 INTO TABLE ownership_capitalization
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -576,7 +576,7 @@ SHOW WARNINGS;
 
 -- ownership_contract
 -- load ownership_contract
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_contract.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_contract.dat'
 INTO TABLE ownership_contract
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -593,7 +593,7 @@ SHOW WARNINGS;
 
 -- ownership_exemptions
 -- load ownership_exemptions
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_exemptions.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_exemptions.dat'
 INTO TABLE ownership_exemptions
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -605,7 +605,7 @@ SHOW WARNINGS;
 
 -- ownership_group
 -- load ownership_group
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_group.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_group.dat'
 INTO TABLE ownership_group
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -618,7 +618,7 @@ SHOW WARNINGS;
 
 -- ownership_interests
 -- load ownership_interests
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_interests.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_interests.dat'
 INTO TABLE ownership_interests
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -630,7 +630,7 @@ SHOW WARNINGS;
 
 -- ownership_other_int
 -- load ownership_other_int
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_other_int.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_other_int.dat'
 INTO TABLE ownership_other_int
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -638,10 +638,10 @@ LINES TERMINATED BY '^|\n'
 set
 last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 
--- ERROR 2 (HY000): File 'cdbs_files/ownership_other_int_xml_data.dat' not found (Errcode: 2)
+-- ERROR 2 (HY000): File '/codedata/FCC/data/public/cdbs/ownership_other_int_xml_data.dat' not found (Errcode: 2)
 -- ownership_other_int_xml_data
 -- load ownership_other_int_xml_data
--- LOAD DATA LOCAL INFILE 'cdbs_files/ownership_other_int_xml_data.dat'
+-- LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_other_int_xml_data.dat'
 -- INTO TABLE ownership_other_int_xml_data
 -- FIELDS TERMINATED BY '|'
 -- (application_id, file_id, order_number, assets_perc, comm_city, comm_state, entity_type, equity_perc, fac_callsign, facility_id, name, newspaper, positional_int_off, positional_int_dir, positional_int_par, positional_int_lim, positional_int_stk, positional_int_own, positional_int_ent, positional_int_oth, positional_int_other_info, votes_perc, @last_update_date)
@@ -651,7 +651,7 @@ last_update_date = str_to_date(@last_update_date, '%m/%d/%Y');
 
 -- ownership_relationships
 -- load ownership_relationships
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_relationships.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_relationships.dat'
 INTO TABLE ownership_relationships
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -663,7 +663,7 @@ SHOW WARNINGS;
 
 -- ownership_report
 -- load ownership_report
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_report.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_report.dat'
 INTO TABLE ownership_report
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -676,7 +676,7 @@ SHOW WARNINGS;
 
 -- ownership_structure
 -- load ownership_structure
-LOAD DATA LOCAL INFILE 'cdbs_files/ownership_structure.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/ownership_structure.dat'
 INTO TABLE ownership_structure
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -692,7 +692,7 @@ SHOW WARNINGS;
 
 -- party
 -- load party
-LOAD DATA LOCAL INFILE 'cdbs_files/party.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/party.dat'
 INTO TABLE party
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -703,7 +703,7 @@ last_change_date = str_to_date(@last_change_date, '%m/%d/%Y');
 
 -- positional_int
 -- load positional_int
-LOAD DATA LOCAL INFILE 'cdbs_files/positional_int.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/positional_int.dat'
 INTO TABLE positional_int
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -719,7 +719,7 @@ SHOW WARNINGS;
 
 -- supp_facility
 -- load supp_facility
-LOAD DATA LOCAL INFILE 'cdbs_files/supp_facility.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/supp_facility.dat'
 INTO TABLE supp_facility
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -732,7 +732,7 @@ SHOW WARNINGS;
 
 -- tv_app_indicators
 -- load tv_app_indicators
-LOAD DATA LOCAL INFILE 'cdbs_files/tv_app_indicators.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/tv_app_indicators.dat'
 INTO TABLE tv_app_indicators
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -743,7 +743,7 @@ SHOW WARNINGS;
 
 -- tv_eng_data
 -- load tv_eng_data
-LOAD DATA LOCAL INFILE 'cdbs_files/tv_eng_data.dat'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/tv_eng_data.dat'
 INTO TABLE tv_eng_data
 FIELDS TERMINATED BY '|'
 LINES TERMINATED BY '^|\n'
@@ -792,7 +792,7 @@ SHOW WARNINGS;
 -- doc_attributes
 -- load doc_attributes
 -- This file is informational only and is not yet published on FCC site.
-LOAD DATA LOCAL INFILE 'cdbs_files/docs/Attributes_tab.txt'
+LOAD DATA LOCAL INFILE '/codedata/FCC/data/public/cdbs/docs/Attributes_tab.txt'
 INTO TABLE doc_attributes
 FIELDS TERMINATED BY '\t'
 OPTIONALLY ENCLOSED BY '"'

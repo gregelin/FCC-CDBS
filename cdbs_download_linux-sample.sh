@@ -8,7 +8,7 @@
 
 ### Description ###
 #
-# This unix shell script automatically downloads FCC CDBS files.
+# This Linux shell script automatically downloads FCC CDBS files.
 # CDBS files are updated daily at 2:00 AM EST.
 # This has been tested on Ubuntu Server.
 
@@ -54,6 +54,8 @@ echo "Load data into MySQL tables"
 # Update the line with your MySQL 'username' and 'password'
 mysql -v -uusername -ppassword cdbs < fcc_cdbs_load_mysql.sql 
 
+echo ""
+echo "Removing all .dat files from $trgDir"
 rm $trgDir*.dat
 echo "All done."
 
