@@ -1,5 +1,8 @@
 README_CHANGELOG
 
+02.25.2017
+	- Modify download script to work on Linux
+	- Modify load SQL script line endings to properly load downloaded files
 
 05.13.2012
 	- Add SHOW WARNING commands to fcc_cdbs_load_mysql.sql
