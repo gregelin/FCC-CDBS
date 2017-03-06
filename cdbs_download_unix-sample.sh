@@ -20,7 +20,7 @@
 # 
 #
 
-set srcUrlPath = 'http://transition.fcc.gov/ftp/Bureaus/MB/Databases/cdbs/'
+set srcUrlPath = 'http://transition.fcc.gov/Bureaus/MB/Databases/cdbs/'
 set srcFile = 'all-cdbs-files.zip'
 set srcDownload = $srcUrlPath$srcFile
 # Update path to directory on your computer to store
